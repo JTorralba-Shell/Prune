@@ -1,0 +1,1 @@
+﻿Get-ChildItem -Path "C:\EmergencyReporting\Out\*.xml" -Recurse $Folder -Force -ea 0 | ? {!$_.PsIsContainer -and $_.LastWriteTime -lt (Get-Date).AddDays(-90)} | Remove-Item
